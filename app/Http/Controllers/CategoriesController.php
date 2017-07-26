@@ -29,6 +29,7 @@ class CategoriesController extends Controller
     {
         $category = (new Category)->forceFill([
             'status' => true,
+            'isRepresentative' => true,
         ]);
 
         return view('categories.create', compact('category'));
@@ -53,41 +54,25 @@ class CategoriesController extends Controller
 
         Category::forceCreate([
             'name' => request('name'),
+            'slug' => str_slug(request('name')),
             'status' => !! request('status'),
+            'isRepresentative' => !! request('isRepresentative'),
             'parent_id' => request('parent_id', 0),
         ]);
 
         return redirect()->route('categories.index')->with('success', 'Category successfully created.' );
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function show(Category $category)
     {
         return view('categories.edit', compact('category'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
         return view('categories.edit', compact('category'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
-     */
     public function update(Category $category)
     {
         $this->validate(request(), [
@@ -98,7 +83,9 @@ class CategoriesController extends Controller
 
         $category->forceFill([
             'name' => request('name'),
+            'slug' => str_slug(request('name')),
             'status' => !! request('status'),
+            'isRepresentative' => !! request('isRepresentative'),
             'parent_id' => request('parent_id', 0),
         ])->save();
 
@@ -108,10 +95,5 @@ class CategoriesController extends Controller
     public function getDatatables()
     {
         return Category::getDatatables();
-    }
-
-    public function all()
-    {
-        return Category::orderBy('name', 'asc')->get();
     }
 }

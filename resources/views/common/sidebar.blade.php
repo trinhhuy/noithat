@@ -30,12 +30,14 @@
         </li>
 
         <li class="{{ (Request::is('categories') || Request::is('categories/*')) ? 'active' : '' }}">
-            <a href="{{ url('/categories') }}"><i class="menu-icon fa fa-cubes"></i> <span class="menu-text"> Danh mục bài viết </span></a>
+            <a href="{{ url('/categories') }}"><i class="menu-icon fa fa-folder"></i> <span class="menu-text"> Danh mục bài viết </span></a>
         </li>
 
         <li class="{{ (Request::is('posts') || Request::is('posts/*')) ? 'active' : '' }}">
             <a href="{{ url('/posts') }}"><i class="menu-icon fa fa-cubes"></i> <span class="menu-text"> Bài viết </span></a>
         </li>
+
+
     </ul><!-- /.nav-list -->
 
     <!-- #section:basics/sidebar.layout.minimize -->

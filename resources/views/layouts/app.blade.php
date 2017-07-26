@@ -54,7 +54,7 @@
     <script src="/vendor/ace/assets/js/html5shiv.js"></script>
     <script src="/vendor/ace/assets/js/respond.js"></script>
     <![endif]-->
-
+    <script src="/js/ckeditor/ckeditor.js"></script>
     <!-- Scripts -->
     <script>
         window.Laradmin = {!! json_encode([
@@ -114,7 +114,7 @@
     <script src="/vendor/ace/assets/js/ace/ace.widget-on-reload.js"></script>
     <script src="/vendor/ace/assets/js/ace/ace.searchbox-autocomplete.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <script src="/js/admin/ckeditor/ckeditor.js"></script>
+
 
     <!-- Scripts -->
     @yield('inline_scripts')

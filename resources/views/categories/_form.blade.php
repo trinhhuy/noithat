@@ -30,11 +30,11 @@
 </div>
 
 <div class="form-group">
-    <label class="col-sm-3 control-label no-padding-right">Kích hoạt</label>
+    <label class="col-sm-3 control-label no-padding-right">Hiển thị sản phẩm ở trang chủ</label>
     <div class="col-sm-6">
         <label>
-             <textarea class="form-control ckeditor" placeholder="Điền miêu tả"
-                       name="description">{{ old('description') }}</textarea>
+            <input type="checkbox" name="isRepresentative" value="1" class="ace ace-switch ace-switch-6"{{ old('isRepresentative', !! $category->isRepresentative) ? ' checked=checked' : '' }}>
+            <span class="lbl"></span>
         </label>
     </div>
 </div>

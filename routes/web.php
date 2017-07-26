@@ -38,6 +38,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('categories', 'CategoriesController');
 
     // Posts
-    Route::get('color/datatables', 'ColorsController@getDatatables')->name('colors.datatables');
-    Route::resource('colors', 'ColorsController');
+    Route::get('posts/datatables', 'PostsController@getDatatables')->name('posts.datatables');
+    Route::resource('posts', 'PostsController');
 });
