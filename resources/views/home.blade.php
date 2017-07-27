@@ -1,32 +1,12 @@
 @extends('frontend.layouts.app')
-
 @section('content')
     <div id="mainslider">
         <div class="slider">
             <div class="fullscreen-container">
                 <div class="fullscreenbanner">
                     <ul>
-                        <li data-transition="slide" data-slotamount="10"> <img class="img-responsive" alt="" src="{{ url('frontend/images/sliderimg-1.png') }}"/>
-                            <div class="caption sfb"
-                                 data-x="center"
-                                 data-y="160"
-                                 data-speed="1000"
-                                 data-start="1000"
-                                 data-easing="easeOutExpo">
-                                <div class="slider-text clearfix">
-                                    <div class="text-box">
-                                        <h2>Luxurious Hotel Suite</h2>
-                                        <p>Whether you’re looking to sell or let your home or want to buy or rent a</p>
-                                        <p> home, we really are the people for you to come to.</p>
-                                    </div>
-                                    <div class="slider-button">
-                                        <div class="view-btn"> <a href="#">VIEW DETAILS</a> </div>
-                                        <div class="signup-btn"> <a href="#">SIGNUP NOW</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li data-transition="slide" data-slotamount="10"> <img class="img-responsive" alt="" src="{{ url('frontend/images/sliderimg-2.png') }}"/>
+                        @foreach($slides as $slide)
+                        <li data-transition="slide" data-slotamount="10"> <img class="img-responsive" alt="" src="{{ url('files/'. $slide->image) }}"/>
                             <div class="caption sfb"
                                  data-x="center"
                                  data-y="center"
@@ -35,37 +15,15 @@
                                  data-easing="easeOutExpo">
                                 <div class="slider-text clearfix">
                                     <div class="text-box">
-                                        <h2>Luxurious Hotel Suite</h2>
-                                        <p>Whether you’re looking to sell or let your home or want to buy or rent a</p>
-                                        <p> home, we really are the people for you to come to.</p>
+                                        <h2>{{ $slide->title }}</h2>
                                     </div>
-                                    <div class="slider-button">
-                                        <div class="view-btn"> <a href="#">VIEW DETAILS</a> </div>
-                                        <div class="signup-btn"> <a href="#">SIGNUP NOW</a> </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </li>
-                        <li data-transition="slide" data-slotamount="10"> <img class="img-responsive" alt="" src="images/sliderimg-3.png"/>
-                            <div class="caption sfb"
-                                 data-x="center"
-                                 data-y="center"
-                                 data-speed="1000"
-                                 data-start="1000"
-                                 data-easing="easeOutExpo">
-                                <div class="slider-text clearfix">
-                                    <div class="text-box">
-                                        <h2>Luxurious Hotel Suite</h2>
-                                        <p>Whether you’re looking to sell or let your home or want to buy or rent a</p>
-                                        <p> home, we really are the people for you to come to.</p>
-                                    </div>
-                                    <div class="slider-button">
-                                        <div class="view-btn"> <a href="#">VIEW DETAILS</a> </div>
-                                        <div class="signup-btn"> <a href="#">SIGNUP NOW</a> </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
+
+
                     </ul>
                 </div>
             </div>
@@ -88,7 +46,7 @@
 
                     <ul class="filter-list">
                         @foreach($posts as $post)
-                            <li class="mix {{ $post['category'] }} col-md-4 col-sm-6 animated out" data-delay="0" data-animation="fadeInUp">
+                            <li class="mix {{ $post['category'] }} col-md-3 col-sm-6 animated out" data-delay="0" data-animation="fadeInUp">
                                 <div class="property-box border-hover">
                                     <div class="appartment-img"><img src="{{ url('files/'. json_decode($post['post']->images)[0])  }}" class="img-responsive" alt="#" width="100%"/>
                                         <div class="detail-btn"> <a href="#" class="more-detail"><i class="fa fa-angle-right"></i>Chi tiết</a> </div>

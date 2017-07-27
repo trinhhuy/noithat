@@ -17,34 +17,37 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.10&appId=315541562244135";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="top-bar">
     <div class="container">
         <div class="left-bar">
-            <ul class="social-media">
-                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li class="dribble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                <li class="vimeo"><a href="#"><i class="icon-vimeo"></i></a></li>
-                <li class="google"><a href="#"><i class="fa fa-google"></i></a></li>
-                <li class="deviantart"><a href="#"><i class="icon-deviantart3"></i></a></li>
-                <li class="pinterest"><a href="#"><i class="icon-pinterest-p"></i></a></li>
-                <li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-            </ul>
+
         </div>
         <div class="right-bar">
             <ul class="contact">
                 <li><i class="fa fa-phone"></i></li>
                 <li></li>
-                <li class="contact-info"><a href="#"> 0989.909.000 / 04.668.46.669</a></li>
+                <li class="contact-info"> 0989.909.000 / 04.668.46.669</li>
             </ul>
             <ul class="mail">
                 <li><i class="icon-email4"></i></li>
                 <li></li>
-                <li class="contact-info"><a href="#">kientrucsdesign@gmail.com</a></li>
+                <li class="contact-info">kientrucsdesign@gmail.com</li>
             </ul>
             <ul class="login">
-                <li><i class="icon-login"></i></li>
-                <li><a href="#"><span>Login</span></a></li>
+                @if(auth()->check())
+                <li><a href="{{ url('/dashboard') }}"><span>{{ auth()->user()->email }}</span></a></li>
+                @else
+                    <li><i class="icon-login"></i></li>
+                    <li><a href="{{ url('/login') }}"><span>Login</span></a></li>
+                @endif
             </ul>
         </div>
     </div>

@@ -16,7 +16,7 @@ class PostsController extends Controller
 
     public function saveImage($file, $old=null) {
         $filename = md5(time()) . str_slug($file->getClientOriginalName()).'.'.$file->getClientOriginalExtension();
-        Image::make($file->getRealPath())->save(public_path('files/'. $filename));
+        \Image::make($file->getRealPath())->save(public_path('files/'. $filename));
         if ($old) {
             @unlink(public_path('files/' .$old));
         }
@@ -91,7 +91,7 @@ class PostsController extends Controller
         return view('posts.edit', compact('post'));
     }
 
-    public function update(Post $post)
+    public function update(Post $post, Request $request)
     {
         $this->validate(request(), [
             'name' => 'required|max:255',
@@ -101,9 +101,8 @@ class PostsController extends Controller
             'category_id.required' => 'Hãy chọn danh mục bài viết.',
         ]);
 
-        $imageArr = [];
-        if (count(request()->file('images'))) {
-            $images = request()->file('images');
+        if (count($request->file('images'))) {
+            $images = $request->file('images');
 
             foreach ($images as $image) {
                 $imageItem = $this->saveImage($image);

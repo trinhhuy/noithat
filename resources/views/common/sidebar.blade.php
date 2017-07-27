@@ -37,6 +37,10 @@
             <a href="{{ url('/posts') }}"><i class="menu-icon fa fa-cubes"></i> <span class="menu-text"> Bài viết </span></a>
         </li>
 
+        <li class="{{ (Request::is('images') || Request::is('images/*')) ? 'active' : '' }}">
+            <a href="{{ url('/images') }}"><i class="menu-icon fa fa-picture-o"></i> <span class="menu-text"> Ảnh slide </span></a>
+        </li>
+
 
     </ul><!-- /.nav-list -->
 

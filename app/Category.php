@@ -20,7 +20,7 @@ class Category extends Model
 
     public static function getList()
     {
-        return static::active()->where('parent_id', '!=' ,0)->pluck('name', 'id')->all();
+        return static::active()->pluck('name', 'id')->all();
     }
 
     public function parent()

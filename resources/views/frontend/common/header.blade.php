@@ -13,15 +13,15 @@
                             <?php $categories = \App\Components\Functions::getCategories() ?>
                             @foreach($categories as $category)
                                 @if($category->children()->count() > 0)
-                                    <li><a aria-expanded="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">{{ $category->name }}</a>
+                                    <li class=""><a aria-expanded="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">{{ $category->name }}</a>
                                         <ul class="dropdown-menu" role="menu">
                                             @foreach($category->children as $child)
-                                                <li><a href="properties-list.html">{{ $child->name }}</a></li>
+                                                <li><a href="{{ url('/'.$child->slug) }}">{{ $child->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </li>
                                 @else
-                                    <li><a href="{{ url('/'.$category->slug) }}">{{ $category->name }}</a></li>
+                                    <li class="{{ (Request::path() == $category->slug) ? 'active' : '' }}"><a href="{{ url('/'.$category->slug) }}">{{ $category->name }}</a></li>
                                 @endif
                             @endforeach
                         </ul>

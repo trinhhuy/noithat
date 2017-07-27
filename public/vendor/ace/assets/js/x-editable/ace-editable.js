@@ -84,7 +84,7 @@ Image editable input.
 		image:
 		{
 			style: 'well',
-			btn_choose: 'Change Image',
+			btn_choose: 'Change Slide',
 			btn_change: null,
 			no_icon: 'fa fa-picture-o',
 			thumbnail: 'large'

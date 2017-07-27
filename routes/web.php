@@ -17,8 +17,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'DashboardController@index');
 
@@ -40,4 +38,13 @@ Route::group(['middleware' => 'auth'], function () {
     // Posts
     Route::get('posts/datatables', 'PostsController@getDatatables')->name('posts.datatables');
     Route::resource('posts', 'PostsController');
+
+    // Posts
+    Route::get('images/datatables', 'SlidesController@getDatatables')->name('images.datatables');
+    Route::resource('images', 'SlidesController');
 });
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{slug}', 'HomeController@category')->name('category');
+Route::get('/{category}/{post}', 'HomeController@postDetail')->name('postDetail');
+

@@ -1053,7 +1053,7 @@
 
 			//ACE
 			if('bootbox' in window) {
-				 bootbox.prompt(e.__localize('Insert Image Hyperlink'), function(link) {
+				 bootbox.prompt(e.__localize('Insert Slide Hyperlink'), function(link) {
 					if (link != null && link != '' && link != 'http://' && link.substr(0,4) == 'http') {
 					  var sanitizedLink = $('<div>'+link+'</div>').text()
 					  
@@ -1070,7 +1070,7 @@
 				});
 			}
 			else {
-				link = prompt(e.__localize('Insert Image Hyperlink'),'http://')
+				link = prompt(e.__localize('Insert Slide Hyperlink'),'http://')
 
 				if (link != null && link != '' && link != 'http://' && link.substr(0,4) == 'http') {
 				  var sanitizedLink = $('<div>'+link+'</div>').text()

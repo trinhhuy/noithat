@@ -46,7 +46,7 @@
         <div class="col-xs-12">
             @include('common.errors')
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('posts.update', $post->id) }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('posts.update', $post->id) }}" enctype="multipart/form-data">
                 {!! method_field('PUT') !!}
                 @include('posts._form')
             </form>

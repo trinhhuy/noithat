@@ -91,8 +91,8 @@
 			'insertImage' : {
 				icon : 'fa fa-picture-o',
 				title : 'Insert picture',
-				button_text : '<i class="'+ ace.vars['icon'] + 'fa fa-file"></i> Choose Image &hellip;',
-				placeholder : 'Image URL',
+				button_text : '<i class="'+ ace.vars['icon'] + 'fa fa-file"></i> Choose Slide &hellip;',
+				placeholder : 'Slide URL',
 				button_insert : 'Insert',
 				button_class : 'btn-success',
 				button_insert_class : 'btn-primary',

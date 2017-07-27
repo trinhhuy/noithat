@@ -17,7 +17,7 @@ namespace CKSource\CKFinder;
 use CKSource\CKFinder\Exception\CKFinderException;
 
 /**
- * The Image class.
+ * The Slide class.
  *
  * The class used for image processing.
  *
@@ -28,21 +28,21 @@ class Image
     protected static $supportedExtensions = array('jpg', 'jpeg', 'gif', 'png');
 
     /**
-     * Image width.
+     * Slide width.
      *
      * @var int $witdh
      */
     protected $width;
 
     /**
-     * Image height.
+     * Slide height.
      *
      * @var int $height
      */
     protected $height;
 
     /**
-     * Image MIME type.
+     * Slide MIME type.
      *
      * @var string $mime
      */
@@ -113,7 +113,7 @@ class Image
     }
 
     /**
-     * Checks if a given exception is supported by the Image class.
+     * Checks if a given exception is supported by the Slide class.
      *
      * @param string $extension
      * @param bool   $bmpSupport
@@ -575,7 +575,7 @@ class Image
      * Returns image data.
      *
      * @param string $format Returned image format mimetype (current image mimetype is used if not set).
-     * @param int $quality   Image quelity (used for JPG images only)
+     * @param int $quality   Slide quelity (used for JPG images only)
      *
      * @return string image data
      */

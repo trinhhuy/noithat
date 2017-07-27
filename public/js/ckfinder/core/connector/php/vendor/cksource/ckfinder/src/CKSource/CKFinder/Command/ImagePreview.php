@@ -112,7 +112,7 @@ class ImagePreview extends CommandAbstract
         $mimeType = $resultImage->getMimeType();
 
         if (in_array($mimeType, array('image/bmp', 'image/x-ms-bmp'))) {
-            $mimeType = 'image/jpeg'; // Image::getData() by default converts resized images to JPG
+            $mimeType = 'image/jpeg'; // Slide::getData() by default converts resized images to JPG
         }
 
         $response->headers->set('Content-Type', $mimeType. '; name="' . $downloadedFile->getFileName() . '"');

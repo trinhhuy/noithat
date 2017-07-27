@@ -2,7 +2,7 @@
 
 /** This file is part of KCFinder project
   *
-  *      @desc Image detection class
+  *      @desc Slide detection class
   *   @package KCFinder
   *   @version 3.12
   *    @author Pavel Tzonkov <sunhater@sunhater.com>

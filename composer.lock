@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "84c6757f21541ebbc97e764efe65fc36",
+    "content-hash": "739bd9a7db5a5d514cbe2f4f1bd8a9b2",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -215,16 +215,16 @@
         },
         {
             "name": "intervention/image",
-            "version": "dev-master",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "4581c28cdcb6067dca2b27ea8b76842ca79ddf90"
+                "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/4581c28cdcb6067dca2b27ea8b76842ca79ddf90",
-                "reference": "4581c28cdcb6067dca2b27ea8b76842ca79ddf90",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/322a4ade249467179c50a3e50eda8760ff3af2a3",
+                "reference": "322a4ade249467179c50a3e50eda8760ff3af2a3",
                 "shasum": ""
             },
             "require": {
@@ -281,7 +281,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2017-07-04T16:10:28+00:00"
+            "time": "2017-07-03T15:50:40+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -3607,9 +3607,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "intervention/image": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
