@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Image;
 use App\Category;
 
 class CategoriesController extends Controller
@@ -10,6 +11,16 @@ class CategoriesController extends Controller
     {
         view()->share('parentList', Category::getParentList());
     }
+
+    public function saveImage($file, $old=null) {
+        $filename = md5(time()) . str_slug($file->getClientOriginalName()).'.'.$file->getClientOriginalExtension();
+        Image::make($file->getRealPath())->save(public_path('files/'. $filename));
+        if ($old) {
+            @unlink(public_path('files/' .$old));
+        }
+        return $filename;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -42,18 +53,19 @@ class CategoriesController extends Controller
      */
     public function store()
     {
-        if(!request()->has('margin')){
-            request()->merge(['margin' => 0]);
-        }
-
         $this->validate(request(), [
             'name' => 'required|max:255|unique:categories',
+            'banner' => 'required|image',
         ], [
             'name.unique' => 'Tên danh mục đã tồn tại.',
+            'banner.required' => 'Hãy chọn ảnh.',
         ]);
+
+        $image = $this->saveImage(request()->file('banner'));
 
         Category::forceCreate([
             'name' => request('name'),
+            'banner' => $image,
             'slug' => str_slug(request('name')),
             'status' => !! request('status'),
             'isRepresentative' => !! request('isRepresentative'),
@@ -81,8 +93,13 @@ class CategoriesController extends Controller
             'name.unique' => 'Tên danh mục đã tồn tại.',
         ]);
 
+        if (count(request()->file('banner'))) {
+            $ima = $this->saveImage(request()->file('banner'));
+        }
+
         $category->forceFill([
             'name' => request('name'),
+            'banner' => isset($ima) ? $ima : $category->banner,
             'slug' => str_slug(request('name')),
             'status' => !! request('status'),
             'isRepresentative' => !! request('isRepresentative'),

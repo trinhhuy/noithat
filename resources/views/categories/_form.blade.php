@@ -8,6 +8,16 @@
 </div>
 
 <div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">Banner</label>
+    <div class="col-sm-6">
+        <label>
+            <input type="file" class="post-image form-control"  name="banner"
+                   rel="post_status_images" id="banners">
+        </label>
+    </div>
+</div>
+
+<div class="form-group">
     <label class="col-sm-3 control-label no-padding-right">Danh mục cha</label>
     <div class="col-sm-6">
         <select class="form-control" name="parent_id">

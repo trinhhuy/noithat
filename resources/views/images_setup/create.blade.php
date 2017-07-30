@@ -18,7 +18,7 @@
             <a href="{{ url('/dashboard') }}">Dashboard</a>
         </li>
         <li>
-            <a href="{{ route('categories.index') }}">Danh mục</a>
+            <a href="{{ route('posts.index') }}">Danh mục</a>
         </li>
         <li class="active">Tạo mới</li>
     </ul><!-- /.breadcrumb -->
@@ -34,7 +34,7 @@
                 <i class="ace-icon fa fa-angle-double-right"></i>
                 Tạo mới
             </small>
-            <a class="btn btn-primary pull-right" href="{{ route('categories.index') }}">
+            <a class="btn btn-primary pull-right" href="{{ route('images.index') }}">
                 <i class="ace-icon fa fa-list" aria-hidden="true"></i>
                 <span class="hidden-xs">Danh sách</span>
             </a>
@@ -44,8 +44,8 @@
         <div class="col-xs-12">
             @include('common.errors')
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('categories.store') }}" enctype="multipart/form-data">
-                @include('categories._form')
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('images-setup.store') }}" enctype="multipart/form-data">
+                @include('images_setup._form')
             </form>
         </div>
     </div>

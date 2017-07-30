@@ -18,9 +18,9 @@
             <a href="{{ url('/dashboard') }}">Dashboard</a>
         </li>
         <li>
-            <a href="{{ route('categories.index') }}">Danh mục</a>
+            <a href="{{ route('images.index') }}">Ảnh Slide</a>
         </li>
-        <li class="active">Tạo mới</li>
+        <li class="active">Thay đổi</li>
     </ul><!-- /.breadcrumb -->
     <!-- /section:basics/content.searchbox -->
 </div>
@@ -29,23 +29,26 @@
 <div class="page-content">
     <div class="page-header">
         <h1>
-            Danh mục
+            Ảnh
             <small>
                 <i class="ace-icon fa fa-angle-double-right"></i>
-                Tạo mới
+                Thay đổi
             </small>
-            <a class="btn btn-primary pull-right" href="{{ route('categories.index') }}">
-                <i class="ace-icon fa fa-list" aria-hidden="true"></i>
-                <span class="hidden-xs">Danh sách</span>
-            </a>
+            <p class="pull-right">
+                <a class="btn btn-primary" href="{{ route('images.index') }}">
+                    <i class="ace-icon fa fa-list" aria-hidden="true"></i>
+                    <span class="hidden-xs">Danh sách</span>
+                </a>
+            </p>
         </h1>
     </div><!-- /.page-header -->
     <div class="row">
         <div class="col-xs-12">
             @include('common.errors')
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('categories.store') }}" enctype="multipart/form-data">
-                @include('categories._form')
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('images-setup.update', $image->id) }}">
+                {!! method_field('PUT') !!}
+                @include('images_setup._form')
             </form>
         </div>
     </div>
@@ -63,8 +66,10 @@ $(function () {
     var attributes = $('select[name="attributes[]"]').bootstrapDualListbox({infoTextFiltered: '<span class="label label-purple label-lg">Lọc</span>'});
     var attributesContainer = attributes.bootstrapDualListbox('getContainer');
     attributesContainer.find('.btn').addClass('btn-white btn-info btn-bold');
-
-    $(".post-image").fileinput({
+    $("#images").fileinput({
+        'initialPreview': [
+                '<img src="' + '{{url('/files/'.$image->image)}}' + '" class="kv-preview-data file-preview-image" style="width:auto;height:160px;">',
+        ],
         'showUpload': false, 'previewFileType': 'any',
         'showCaption': false
     });

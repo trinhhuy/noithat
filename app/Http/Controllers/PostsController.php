@@ -75,6 +75,7 @@ class PostsController extends Controller
             'images' => json_encode($imageArr),
             'category_id' => request('category_id'),
             'content' => request('content'),
+            'desc' => request('desc'),
             'status' => !! request('status')
         ]);
 
@@ -100,7 +101,7 @@ class PostsController extends Controller
             'name.required' => 'Hãy chọn tiêu đề bài viết.',
             'category_id.required' => 'Hãy chọn danh mục bài viết.',
         ]);
-
+        $imageArr = [];
         if (count($request->file('images'))) {
             $images = $request->file('images');
 
@@ -116,6 +117,7 @@ class PostsController extends Controller
             'images' => count($imageArr) > 0 ? json_encode($imageArr) : $post->images,
             'category_id' => request('category_id'),
             'content' => request('content'),
+            'desc' => request('desc'),
             'status' => !! request('status')
         ])->save();
 

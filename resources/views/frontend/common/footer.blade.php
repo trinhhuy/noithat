@@ -1,4 +1,4 @@
-<footer class="bg-color">
+<footer class="bg-color" style="background:url({{ url('files/'. \App\Components\Functions::getFooter()->image) }});">
     <div class="container">
         <div class="upper-footer clearfix">
             <div class="widgets">

@@ -20,11 +20,21 @@
 </div>
 
 <div class="form-group">
+    <label class="col-sm-3 control-label no-padding-right">Mô tả ngắn</label>
+    <div class="col-sm-6">
+        <label>
+             <textarea class="form-control ckeditor" placeholder="Điền nội dung bài viết"
+                       name="desc">{{ old('desc', $post->desc) }}</textarea>
+        </label>
+    </div>
+</div>
+
+<div class="form-group">
     <label class="col-sm-3 control-label no-padding-right">Nội dung bài viết</label>
     <div class="col-sm-6">
         <label>
              <textarea class="form-control ckeditor" placeholder="Điền nội dung bài viết"
-                       name="content">{{ old('description', $post->content) }}</textarea>
+                       name="content">{{ old('content', $post->content) }}</textarea>
         </label>
     </div>
 </div>

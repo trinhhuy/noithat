@@ -1,5 +1,13 @@
 @extends('frontend.layouts.app')
 @section('content')
+
+    <section class="vacation-bg animated out" data-delay="0" data-animation="fadeInUp" style="background:url({{ url('files/'. $category->banner) }});">
+        <div class="container">
+            <div class="get-start mrgt6x mrgb6x clearfix">
+            </div>
+        </div>
+    </section>
+
     <section class="border-top">
         <div class="container">
             <div class="page-title mrgb3x mrgt6x clearfix">

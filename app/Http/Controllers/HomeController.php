@@ -19,8 +19,11 @@ class HomeController extends Controller
         $representativeCategories = Category::where('isRepresentative', true)->get();
         $posts = $this->getPostHome($representativeCategories);
         $slides = Slide::where('status', true)->get();
+        $news = Post::whereHas('category', function($q){
+            $q->where('slug', 'tin-tuc');
+        })->orderBy('id','DESC')->limit(2)->get();
 
-        return view('home', compact('representativeCategories', 'posts', 'slides'));
+        return view('home', compact('representativeCategories', 'posts', 'slides', 'news'));
     }
 
     public function category($slug)

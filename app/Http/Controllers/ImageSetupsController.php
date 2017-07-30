@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Image;
-use App\Slide;
+use App\ImageSetup;
 use Illuminate\Http\Request;
 
-class SlidesController extends Controller
+class ImageSetupsController extends Controller
 {
     public function saveImage($file, $old=null) {
         $filename = md5(time()) . str_slug($file->getClientOriginalName()).'.'.$file->getClientOriginalExtension();
@@ -23,7 +23,7 @@ class SlidesController extends Controller
      */
     public function index()
     {
-        return view('images.index');
+        return view('images_setup.index');
     }
 
     /**
@@ -33,11 +33,11 @@ class SlidesController extends Controller
      */
     public function create()
     {
-        $slide = (new Slide)->forceFill([
+        $image = (new ImageSetup)->forceFill([
             'status' => true,
         ]);
 
-        return view('images.create', compact('slide'));
+        return view('images_setup.create', compact('image'));
     }
 
     /**
@@ -50,56 +50,59 @@ class SlidesController extends Controller
         $this->validate(request(), [
             'title' => 'required|max:255',
             'image' => 'required|image',
+            'type' => 'required',
         ], [
             'title.required' => 'Hãy chọn tiêu đề ảnh.',
             'image.required' => 'Hãy chọn ảnh.',
+            'type.required' => 'Hãy chọn loại ảnh.',
         ]);
 
         $image = $this->saveImage($request->file('image'));
 
-        Slide::forceCreate([
+        ImageSetup::forceCreate([
             'title' => request('title'),
             'image' => $image,
-            'status' => !! request('status')
+            'status' => !! request('status'),
+            'type' => request('type')
         ]);
 
-        return redirect()->route('images.index')->with('success', 'Post successfully created.' );
+        return redirect()->route('images-setup.index')->with('success', 'Post successfully created.' );
     }
 
 
     public function edit($id)
     {
-        $slide = Slide::find($id);
-        return view('images.edit', compact('slide'));
+        $image = ImageSetup::find($id);
+        return view('images_setup.edit', compact('image'));
     }
 
     public function update($id)
     {
         $this->validate(request(), [
             'title' => 'required|max:255',
+            'type' => 'required',
         ], [
             'name.required' => 'Hãy chọn tiêu đề ảnh.',
+            'type.required' => 'Hãy chọn loại ảnh.',
         ]);
 
-        $image = '';
-
         if (count(request()->file('image'))) {
-            $image = $this->saveImage(request()->file('image'));
+            $ima = $this->saveImage(request()->file('image'));
         }
 
-        $slide = Slide::find($id);
+        $image = ImageSetup::find($id);
 
-        $slide->forceFill([
+        $image->forceFill([
             'title' => request('title'),
-            'image' => !empty($image) ? $image : $slide->image,
+            'image' => isset($ima) ? $ima : $image->image,
             'status' => !! request('status')
         ])->save();
 
-        return redirect()->route('images.index')->with('success', 'Category successfully updated.' );
+        return redirect()->route('images-setup.index')->with('success', 'Category successfully updated.' );
     }
 
     public function getDatatables()
     {
-        return Slide::getDatatables();
+        return ImageSetup::getDatatables();
     }
 }

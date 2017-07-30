@@ -39,9 +39,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('posts/datatables', 'PostsController@getDatatables')->name('posts.datatables');
     Route::resource('posts', 'PostsController');
 
-    // Posts
+    // images Slide
     Route::get('images/datatables', 'SlidesController@getDatatables')->name('images.datatables');
     Route::resource('images', 'SlidesController');
+
+    // images Setup
+    Route::get('images-setup/datatables', 'ImageSetupsController@getDatatables')->name('images-setup.datatables');
+    Route::resource('images-setup', 'ImageSetupsController');
 });
 
 Route::get('/', 'HomeController@index')->name('home');
