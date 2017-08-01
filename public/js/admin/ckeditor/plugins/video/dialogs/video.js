@@ -69,7 +69,7 @@ CKEDITOR.dialog.add( 'video', function ( editor )
 	// To automatically get the dimensions of the poster image
 	var onImgLoadEvent = function()
 	{
-		// Image is ready.
+		// Slide is ready.
 		var preview = this.previewImage;
 		preview.removeListener( 'load', onImgLoadEvent );
 		preview.removeListener( 'error', onImgLoadErrorEvent );
@@ -81,7 +81,7 @@ CKEDITOR.dialog.add( 'video', function ( editor )
 
 	var onImgLoadErrorEvent = function()
 	{
-		// Error. Image is not loaded.
+		// Error. Slide is not loaded.
 		var preview = this.previewImage;
 		preview.removeListener( 'load', onImgLoadEvent );
 		preview.removeListener( 'error', onImgLoadErrorEvent );

@@ -137,7 +137,7 @@ span{
 	background-color:#09b9e5;
 }
 .testi-carousel .item {
-	padding-top:12%;
+	/*padding-top:12%;*/
 }
 /*........................partner-carousel..............*/
 .partner-carousel {
@@ -470,7 +470,7 @@ span{
 	background-color:#09b9e5;  
 }
 .vacation-bg {
-	background:url(../images/vacation-bg-1.jpg) no-repeat;
+
 	background-size:cover;
 }
 .action-text {
@@ -789,7 +789,7 @@ span{
     position: relative;
 }	
 .property-box.border-hover .appartment-img::after {
-    border-bottom: 4px solid #09b9e5;
+    /*border-bottom: 4px solid #09b9e5;*/
     bottom: -3px;
     content: "";
     height: 2px;
@@ -799,7 +799,7 @@ span{
 	transition:all 0.4s ease-in 0s;
 }
 .property-box.border-hover:hover > .appartment-img::after {
-    border-bottom: 4px solid #09b9e5;
+    /*border-bottom: 4px solid #09b9e5;*/
     bottom: -3px;
     content: "";
     height: 2px;
@@ -824,7 +824,7 @@ span{
     z-index: 2;
 }	
 .property-text {
-    border: 1px solid #e6e6e6;
+    /*border: 1px solid #e6e6e6;*/
 	border-top:0px;
 	 padding: 25px 27px 30px;
 	 border-bottom-left-radius: 3px;
@@ -835,7 +835,7 @@ span{
 }
 .appartment-name {
 	position:relative;
-    margin-bottom: 36px;
+    /*margin-bottom: 36px;*/
 }
 .post-meta a {
 	color:#bfbfbf;
@@ -1216,6 +1216,7 @@ span{
 .blog-img {
     float: left;
 	margin-right:27px;
+	width: 137px;
 }
 .section-detail .blog-text h4 {
 	font-size:17px;
@@ -1280,7 +1281,7 @@ span{
 	background-color:#1e2e44;
 }
 footer {
-	color:#fff;
+	color: #fff;
 }
 
 .upper-footer {
@@ -1293,7 +1294,7 @@ footer {
 	margin-bottom:13px;
 }
 .widget-heading::after {
-	border-bottom:2px solid #09b9e5;
+	/*border-bottom:2px solid #09b9e5;*/
 	width:118px;
 	display:block;
 	content:"";
@@ -1685,7 +1686,7 @@ footer .contact li {
 	 padding: 30px 18px;
 }
 .filter-list .property-box .appartment-img::after {
-	border-bottom: 4px solid #09b9e5;
+	/*border-bottom: 4px solid #09b9e5;*/
     bottom: -3px;
     content: "";
     height: 2px;
@@ -2275,7 +2276,7 @@ input[type="checkbox"] {
 	font-size:12px;
 }
 .blog-text .blog-quote p{
-	color:#43d6d1;
+	color: #0a0a0a;
 }
 .blog-text .read-btn {
 	float:right;
@@ -3134,6 +3135,14 @@ contact-info-rightbar {
 .sync2 .owl-wrapper-outer img { 
 		width: 100%;
 }*/
+
+@media (min-width: 1200px)
+{
+	.container {
+		width: 1500px;
+	}
+}
+
 	
 
 

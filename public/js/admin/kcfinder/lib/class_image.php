@@ -17,15 +17,15 @@ namespace kcfinder;
 abstract class image {
     const DEFAULT_JPEG_QUALITY = 75;
 
-/** Image resource or object
+/** Slide resource or object
   * @var mixed */
     protected $image;
 
-/** Image width in pixels
+/** Slide width in pixels
   * @var integer */
     protected $width;
 
-/** Image height in pixels
+/** Slide height in pixels
   * @var integer */
     protected $height;
 

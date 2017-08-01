@@ -18,6 +18,11 @@ class Category extends Model
         return static::active()->where('parent_id', 0)->pluck('name', 'id')->all();
     }
 
+    public static function getList()
+    {
+        return static::active()->pluck('name', 'id')->all();
+    }
+
     public function parent()
     {
         return $this->belongsTo(static::class,'parent_id');
@@ -25,6 +30,10 @@ class Category extends Model
 
     public function children() {
         return $this->hasMany(static::class, 'parent_id')->orderBy('name', 'asc');
+    }
+
+    public function posts() {
+        return $this->hasMany(Post::class);
     }
 
     public static function getDatatables()

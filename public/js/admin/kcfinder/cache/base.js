@@ -3996,7 +3996,7 @@ _.openClipboard = function() {
     }, 1);
 };/** This file is part of KCFinder project
   *
-  *      @desc Image viewer
+  *      @desc Slide viewer
   *   @package KCFinder
   *   @version 3.12
   *    @author Pavel Tzonkov <sunhater@sunhater.com>

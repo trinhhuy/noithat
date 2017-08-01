@@ -17,8 +17,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', 'DashboardController@index');
 
@@ -38,6 +36,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('categories', 'CategoriesController');
 
     // Posts
-    Route::get('color/datatables', 'ColorsController@getDatatables')->name('colors.datatables');
-    Route::resource('colors', 'ColorsController');
+    Route::get('posts/datatables', 'PostsController@getDatatables')->name('posts.datatables');
+    Route::resource('posts', 'PostsController');
+
+    // images Slide
+    Route::get('images/datatables', 'SlidesController@getDatatables')->name('images.datatables');
+    Route::resource('images', 'SlidesController');
+
+    // images Setup
+    Route::get('images-setup/datatables', 'ImageSetupsController@getDatatables')->name('images-setup.datatables');
+    Route::resource('images-setup', 'ImageSetupsController');
 });
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{slug}', 'HomeController@category')->name('category');
+Route::get('/{category}/{post}', 'HomeController@postDetail')->name('postDetail');
+
