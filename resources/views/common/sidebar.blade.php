@@ -42,7 +42,7 @@
         </li>
 
         <li class="{{ (Request::is('images-setup') || Request::is('images-setup/*')) ? 'active' : '' }}">
-            <a href="{{ url('/images-setup') }}"><i class="menu-icon fa fa-picture-o"></i> <span class="menu-text"> Ảnh footer, banner </span></a>
+            <a href="{{ url('/images-setup') }}"><i class="menu-icon fa fa-picture-o"></i> <span class="menu-text"> Ảnh logo, footer, banner </span></a>
         </li>
 
     </ul><!-- /.nav-list -->

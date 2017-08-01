@@ -26,6 +26,7 @@
                <option value="">-- Chọn loại ảnh --</option>
                <option value="1" {{ $image->type == 1 ? 'selected' : '' }}>-- Ảnh footer --</option>
                <option value="2" {{ $image->type == 2 ? 'selected' : '' }}>-- Ảnh banner --</option>
+               <option value="3" {{ $image->type == 3 ? 'selected' : '' }}>-- Ảnh logo --</option>
            </select>
         </label>
     </div>

@@ -3,7 +3,7 @@
         <div class="upper-footer clearfix">
             <div class="widgets">
                 <div class="col-md-4">
-                    <div class="about-widget"> <img src="{{ url('frontend/images/footer-logo.png') }}" class="img-responsive" alt="#" />
+                    <div class="about-widget"> <img src="{{ url('files/'. \App\Components\Functions::getLogo()->image) }}" class="img-responsive" alt="#" />
                         <p> Công ty cổ phần tư vấn thiết kế và thương mại Hoàng Gia (S-design) là công ty chuyên về lĩnh vực tư vấn thiết kế, thi công nội ngoại thất. Chúng tôi tự tin khẳng định với quý khách hàng S-design chính là đơn vị thiết kế thi công nội ngoại thất phù hợp nhất.</p>
                     </div>
                 </div>
