@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <div class="navigation clearfix">
-            <div class="logo"><a href="{{ url('/') }}"><img src="{{ url('frontend/images/logo-img.jpg') }}" alt="#" /> </a></div>
+            <div class="logo"><a href="{{ url('/') }}"><img src="{{ url('files/'. \App\Components\Functions::getLogo()->image) }}" alt="#" /> </a></div>
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar first"></span> <span class="icon-bar middle"></span> <span class="icon-bar last"></span> </button>
             </div>

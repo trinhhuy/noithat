@@ -31,4 +31,10 @@ class Functions
         return $image;
     }
 
+    public static function getLogo()
+    {
+        $image = ImageSetup::where('type', 3)->where('status', true)->orderBy('id', 'DESC')->first();
+        return $image;
+    }
+
 }
