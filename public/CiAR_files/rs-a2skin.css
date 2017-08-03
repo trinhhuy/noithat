@@ -1,0 +1,241 @@
+/******************************
+*
+*  RoyalSlider a2 Gallery Skin ( + plus DEAFAULT SKIN Below )
+*
+*    1. Arrows 
+*    2. Bullets
+*    3. Thumbnails
+*    4. Tabs
+*    5. Fullscreen button
+*    6. Play/close video button
+*    7. Preloader
+*    
+*  Sprite: 'rs-default.png'
+*  Feel free to edit anything
+*  If you don't some part - just delete it
+* 
+******************************/
+
+.royalSlider.a2gallery.fullGallery.rsDefault{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 200px; /* height of thumbs (if not required set to 0) */
+    height: auto;
+    width: auto;
+    
+}
+
+body.home .royalSlider.a2gallery.fullGallery.rsDefault .rsNav.rsThumbs.rsThumbsHor {
+background:none !important;
+}
+.royalSlider.a2gallery.rsDefault .rsNav.rsThumbs.rsThumbsHor {
+
+}
+
+
+.royalSlider.a2gallery.fullGallery.rsFullscreen.rsDefault .rsNav.rsThumbs.rsThumbsHor,
+body.home .royalSlider.a2gallery.fullGallery.rsFullscreen.rsDefault .rsNav.rsThumbs.rsThumbsHor,
+body.home #featureGallery .royalSlider.a2gallery.fullGallery.rsFullscreen.rsDefault .rsNav.rsThumbs.rsThumbsHor
+ {
+top: 0;
+bottom:0px !important;
+background:none !important;
+}
+
+
+
+.royalSlider.a2gallery.rsDefault .rsThumbsArrow {	
+	background: #3399CC;
+	background: rgba(51, 153, 204,0.75);
+	
+	border-top: 1px solid #FFF !important;
+}
+.royalSlider.a2gallery.sDefault .rsThumbsArrow:hover {
+	background: rgba(51, 153, 204,0.9);
+}
+
+.royalSlider.a2gallery.rsDefault .rsThumb.rsNavSelected {
+	background: #FFFFFF;
+}
+
+.royalSlider.a2gallery.rsDefault .rsThumb {
+	width: 80px;
+	height: 80px!important;
+}
+
+.royalSlider.a2gallery.rsDefault.rsWithThumbsHor .rsThumbsContainer {
+	padding: 1px 0 0 0 !important;
+	margin: 0px !important;
+}
+
+
+
+
+
+
+.royalSlider.a2gallery.rsDefault .rsFullscreenIcn {
+	background-image: url('/theme/images/rs-full.png');
+	background-position: center center;
+	background-color: transparent;
+	*background-color: transparent;
+	opacity:1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+.royalSlider.a2gallery.rsDefault .rsFullscreenIcn:hover {
+	background-color: transparent;
+	opacity:0.75;
+	filter:alpha(opacity=75); /* For IE8 and earlier */
+}
+
+.royalSlider.a2gallery.rsDefault .rsPlayBtn {
+	-webkit-tap-highlight-color:rgba(255, 255, 255,0.3);
+}
+.royalSlider.a2gallery.rsDefault .rsPlayBtnIcon {	
+	background-color: rgba(255, 255, 255, 0.75);
+	*background-color: #FFF;
+}
+.royalSlider.a2gallery.rsDefault .rsPlayBtn:hover .rsPlayBtnIcon {
+	background-color: rgba(51, 153, 204,0.9);
+}
+
+.royalSlider.a2gallery.rsDefault .rsCloseVideoIcn {
+	background-color: #000;
+	background-color: rgba(51, 153, 204,0.75);
+}
+.royalSlider.a2gallery.rsDefault .rsCloseVideoIcn:hover {
+	background-color: rgba(51, 153, 204,0.9);
+}
+
+.royalSlider.a2gallery.rsDefault .rsThumbsHor {
+	padding-bottom: 0px !important;
+	height: 50px;
+	overflow:hidden;
+	margin:0 !important;
+}
+
+.royalSlider.a2gallery.rsDefault .rsBullets {
+	background: #3399CC;
+	background: rgba(51, 153, 204,0.75);
+	text-align: left;
+}
+.royalSlider.a2gallery.rsDefault .rsBullet {
+	background: #777;
+	background: rgba(51, 153, 204,0.5);
+}
+.royalSlider.a2gallery.rsDefault .rsBullet.rsNavSelected  {
+	background-color: #3399CC;
+}
+.royalSlider.a2gallery.rsDefault .rsABlock {
+	right: 0;
+	bottom: 0;
+	top:auto;
+	left:auto;
+	background:rgba(239, 239, 239 , .8) !important;
+	padding:3px 5px 1px 15px;
+}
+#featureGallery .royalSlider.a2gallery.rsDefault .rsSlide {
+	overflow:visible;
+}
+
+#featureGallery .royalSlider.a2gallery.rsDefault .rsOverflow  {
+	padding-bottom:20px;
+	background:none !important;
+}
+
+.royalSlider.a2gallery.rsFullscreen.rsDefault .rsOverflow,
+#featureGallery .royalSlider.a2gallery.rsFullscreen.rsDefault .rsOverflow{
+padding-bottom:0px
+}
+
+
+
+#featureGallery .royalSlider.a2gallery.rsDefault .rsABlock {
+	left: 0;
+	top: 100%;
+	margin-top:87px;
+	background:none !important;
+	padding:0;
+}
+
+body.home #featureGallery .royalSlider.a2gallery.rsDefault .rsArrowIcn {		
+	
+}
+body.home #featureGallery .royalSlider.a2gallery.rsDefault.rsFullscreen .rsArrowIcn {		
+	margin-top:0px !important;	
+}
+
+.royalSlider.a2gallery.rsDefault .rsArrowIcn {		
+	background-color: transparent;
+	*background-color: transparent;
+	
+	background-image: url('/theme/images/plus.png');
+	background-repeat: no-repeat;
+	width: 89px;
+	height: 89px;
+	top: 50%;
+	left: 50%;
+	margin-top:-40px;	
+	margin-left: -40px;
+	
+	opacity:1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+
+}
+
+.royalSlider.a2gallery.rsDefault.rsHor .rsArrowLeft .rsArrowIcn { 
+background-position: center center;
+background-image: url('/theme/images/minus.png');
+}
+.royalSlider.a2gallery.rsDefault.rsHor .rsArrowRight .rsArrowIcn { 
+background-position: center center;
+background-image: url('/theme/images/plus.png');
+}
+
+
+.royalSlider.a2gallery.rsDefault .rsArrow {
+	width: 120px;
+}
+
+.royalSlider.a2gallery.rsDefault .rsArrowIcn:hover {
+	background-color: transparent;
+	opacity:0.75;
+	filter:alpha(opacity=75); /* For IE8 and earlier */
+}
+.royalSlider.a2gallery.rsDefault .rsArrowDisabled .rsArrowIcn { background-color: rgba(255, 255, 255,0); }
+
+
+.royalSlider.a2gallery.rsDefault .rsSlide .rsImg{
+	position: absolute;
+	bottom: 0 !important;
+}
+.royalSlider.a2gallery.rsDefault .rsThumb {
+	float: left;
+	overflow: hidden;
+	width: 80px !important;
+	height: 50px !important;
+}
+
+/* Background */
+.royalSlider.a2gallery.rsDefault rsContainer,
+.royalSlider.a2gallery.rsDefault .rsOverflow,
+.royalSlider.a2gallery.rsDefault .rsSlide,
+.royalSlider.a2gallery.rsDefault .rsVideoFrameHolder,
+.royalSlider.a2gallery.rsDefault .rsThumbs {
+	background: #EEE !important;
+	
+}
+
+/* Background */
+
+.royalSlider.a2gallery.rsDefault {
+margin:0 !important;
+padding:0 !important;
+}
+
+
+.royalSlider.a2gallery.rsDefault .rsSlide, .royalSlider.a2gallery.rsDefault .rsImg {
+margin:0 !important;
+padding:0 1px 0px 0 !important;	
+}

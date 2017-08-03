@@ -16,32 +16,63 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $representativeCategories = Category::where('isRepresentative', true)->get();
-        $posts = $this->getPostHome($representativeCategories);
-        $slides = Slide::where('status', true)->get();
-        $news = Post::whereHas('category', function($q){
-            $q->where('slug', 'tin-tuc');
-        })->orderBy('id','DESC')->limit(2)->get();
+//        $representativeCategories = Category::where('isRepresentative', true)->get();
+//        $posts = $this->getPostHome($representativeCategories);
+//        $slides = Slide::where('status', true)->get();
+//        $news = Post::whereHas('category', function($q){
+//            $q->where('slug', 'tin-tuc');
+//        })->orderBy('id','DESC')->limit(2)->get();
 
-        return view('home', compact('representativeCategories', 'posts', 'slides', 'news'));
+        $categories = Category::where('parent_id', 0)->get();
+        foreach ($categories as $category) {
+            if(count($category->children) > 0) {
+                $firstNavs[] = $category;
+            } else {
+                $secondNavs[] = $category;
+            }
+        }
+
+        return view('home', compact('firstNavs', 'secondNavs'));
     }
 
     public function category($slug)
     {
+        $categories = Category::where('parent_id', 0)->get();
+        foreach ($categories as $category) {
+            if(count($category->children) > 0) {
+                $firstNavs[] = $category;
+            } else {
+                $secondNavs[] = $category;
+            }
+        }
+
         $category = Category::where('slug', $slug)->first();
         $posts = $category->posts;
-        if (count($posts) > 1) {
-            $posts = $category->posts()->paginate(2);
 
-            return view('frontend.posts', compact('posts', 'category'));
+        if (count($posts) > 1) {
+            $posts = $category->posts;
+
+            return view('frontend.posts', compact('posts', 'category', 'firstNavs', 'secondNavs'));
         } else {
-            return view('frontend.post', compact('posts', 'category'));
+
+            return view('frontend.post', compact('posts', 'category', 'firstNavs', 'secondNavs'));
         }
     }
 
     public function postDetail($category, $post) {
+
+        $categories = Category::where('parent_id', 0)->get();
+        foreach ($categories as $category) {
+            if(count($category->children) > 0) {
+                $firstNavs[] = $category;
+            } else {
+                $secondNavs[] = $category;
+            }
+        }
+
+
         $post = Post::where('slug', $post)->first();
-        return view('frontend.post_detail', compact('post'));
+        return view('frontend.post_detail', compact('post', 'firstNavs', 'secondNavs'));
     }
 
     public function getPostHome($representativeCategories) {
