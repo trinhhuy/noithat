@@ -1,0 +1,15 @@
+########################################################
+ Congratulations Sentora has now been installed on your
+ server. Please review the log file left in /root/ for 
+ any errors encountered during installation.
+
+ Login to Sentora at http://quantri.kientrucnoithatdep.com
+ Sentora Username  : zadmin
+ Sentora Password  : OphtUZyrjJ3cyOvY
+
+ MySQL Root Password      : KE5hUIcoqNvBxW0d
+ MySQL Postfix Password   : SJ4K8ljT6Le6MdKG
+ MySQL ProFTPd Password   : VSUimdAJYbsLyWtQ
+ MySQL Roundcube Password : J0wVHgERqaSefLXC
+   (theses passwords are saved in /root/passwords.txt)
+########################################################

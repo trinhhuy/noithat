@@ -86,7 +86,9 @@ class ImageSetupsController extends Controller
             'type.required' => 'Hãy chọn loại ảnh.',
         ]);
 
-        if (count(request()->file('image'))) {
+        $ima='';
+
+        if (request()->file('image')) {
             $ima = $this->saveImage(request()->file('image'));
         }
 
@@ -94,7 +96,7 @@ class ImageSetupsController extends Controller
 
         $image->forceFill([
             'title' => request('title'),
-            'image' => isset($ima) ? $ima : $image->image,
+            'image' => !empty($ima) ? $ima : $image->image,
             'status' => !! request('status')
         ])->save();
 

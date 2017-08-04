@@ -20,11 +20,11 @@
             <div class="col-md-12 blog-rightbar">
                 @foreach($posts as $post)
                 <div class="blog-section mrgb9x clearfix col-md-4 col-sm-6 animated out" data-delay="0" data-animation="fadeInUp" style="margin-top: 15px;">
-                    <div class="blogsingle-img " style="height: 200px;">
+                    <div class="blogsingle-img " style="height: 250px;">
                         @foreach(json_decode($post->images) as $key => $image)
                             @if($key == 0)
                             <a href="{{ url('files/'. $image)  }}"><div class="property-image">
-                                    <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 200px"/></div>
+                                    <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 250px;"/></div>
                             </a>
                             @else
                                 <a href="{{ url('files/'. $image)  }}" width="100%"></a>

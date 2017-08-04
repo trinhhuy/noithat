@@ -12,6 +12,9 @@
 
             <div class="col-md-12 blog-singlepost">
                 <div class="blog-section mrgb9x clearfix animated out" data-delay="0" data-animation="fadeInUp">
+                    <div class="blog-text">
+                        {!! $post->content !!}
+                    </div>
                     @foreach(json_decode($post->images) as $image)
                         <div class="blogsingle-img"> <img src="{{ url('files/'. $image) }}" class="img-responsive" alt="#" /> </div>
                     @endforeach

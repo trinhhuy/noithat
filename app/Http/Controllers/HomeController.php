@@ -31,7 +31,7 @@ class HomeController extends Controller
         $category = Category::where('slug', $slug)->first();
         $posts = $category->posts;
         if (count($posts) > 1) {
-            $posts = $category->posts()->paginate(2);
+            $posts = $category->posts()->paginate(15);
 
             return view('frontend.posts', compact('posts', 'category'));
         } else {
