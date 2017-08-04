@@ -1,0 +1,56 @@
+/* TYPOGRAPHY */
+/* ----------------------------------------- */
+
+/*
+
+YELLOW COLOR:  #ffcc33
+BLUE COLOR:#0066cc;
+
+*/
+
+/* first for IE 4–8 */
+@font-face {
+	font-family: DINWeb;
+	font-style: normal;
+	
+	src: url("../fonts/DINWeb.eot");
+}
+/* then for WOFF-capable browsers */
+@font-face {
+	font-family: DINWeb;
+	font-style: normal;
+	
+	src: url("../fonts/DINWeb.woff") format("woff");
+}
+/* first for IE 4–8 */
+@font-face {
+	font-family: DINWeb;
+	font-style: normal;
+	font-weight: bold;
+	src: url("../fonts/DINWeb-Medium.eot");
+}
+/* then for WOFF-capable browsers */
+@font-face {
+	font-family: DINWeb;
+	font-style: normal;
+	font-weight: bold;
+	src: url("../fonts/DINWeb-Medium.woff") format("woff");
+}
+
+html, body {
+	font:12px/1.2 DINWeb,Arial,Helvetica,sans-serif;
+}
+
+blockquote {
+color: #3399CC;
+font-size:180%;
+padding-left:35px;
+background-image: url("../images/quote.gif");
+background-position:top left;
+background-repeat:no-repeat;
+padding-top:2px;
+}
+
+.inner h1, .inner h2, .inner h3, .inner h4{
+padding: 0 0 .6em 0;
+}
