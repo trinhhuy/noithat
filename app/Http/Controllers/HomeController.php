@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\Category;
 use App\Post;
 use App\Slide;
 use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -16,75 +13,39 @@ class HomeController extends Controller
      */
     public function index()
     {
-//        $representativeCategories = Category::where('isRepresentative', true)->get();
-//        $posts = $this->getPostHome($representativeCategories);
-//        $slides = Slide::where('status', true)->get();
-//        $news = Post::whereHas('category', function($q){
-//            $q->where('slug', 'tin-tuc');
-//        })->orderBy('id','DESC')->limit(2)->get();
-
-        $categories = Category::where('parent_id', 0)->get();
-        foreach ($categories as $category) {
-            if(count($category->children) > 0) {
-                $firstNavs[] = $category;
-            } else {
-                $secondNavs[] = $category;
-            }
-        }
-
-        return view('home', compact('firstNavs', 'secondNavs'));
+        $representativeCategories = Category::where('isRepresentative', true)->get();
+        $posts = $this->getPostHome($representativeCategories);
+        $slides = Slide::where('status', true)->get();
+        $news = Post::whereHas('category', function($q){
+            $q->where('slug', 'tin-tuc');
+        })->orderBy('id','DESC')->limit(2)->get();
+        return view('home', compact('representativeCategories', 'posts', 'slides', 'news'));
     }
-
     public function category($slug)
     {
-        $categories = Category::where('parent_id', 0)->get();
-        foreach ($categories as $category) {
-            if(count($category->children) > 0) {
-                $firstNavs[] = $category;
-            } else {
-                $secondNavs[] = $category;
-            }
-        }
-
         $category = Category::where('slug', $slug)->first();
         $posts = $category->posts;
-
         if (count($posts) > 1) {
-            $posts = $category->posts;
-
-            return view('frontend.posts', compact('posts', 'category', 'firstNavs', 'secondNavs'));
+            $posts = $category->posts()->paginate(2);
+            return view('frontend.posts', compact('posts', 'category'));
         } else {
-
-            return view('frontend.post', compact('posts', 'category', 'firstNavs', 'secondNavs'));
+            return view('frontend.post', compact('posts', 'category'));
         }
     }
-
     public function postDetail($category, $post) {
-
-        $categories = Category::where('parent_id', 0)->get();
-        foreach ($categories as $category) {
-            if(count($category->children) > 0) {
-                $firstNavs[] = $category;
-            } else {
-                $secondNavs[] = $category;
-            }
-        }
-
-
         $post = Post::where('slug', $post)->first();
-        return view('frontend.post_detail', compact('post', 'firstNavs', 'secondNavs'));
+        return view('frontend.post_detail', compact('post'));
     }
-
     public function getPostHome($representativeCategories) {
         $posts = [];
-       foreach ($representativeCategories as $category) {
-           foreach ($category->posts as $post) {
-               $posts[] = [
-                   'category' => $category->slug,
+        foreach ($representativeCategories as $category) {
+            foreach ($category->posts as $post) {
+                $posts[] = [
+                    'category' => $category->slug,
                     'post' => $post
-               ];
-           }
-       }
+                ];
+            }
+        }
         return $posts;
     }
 }
