@@ -39,6 +39,9 @@
                             <div class="blog-post mrgt6x animated out" data-delay="0" data-animation="fadeInUp">
                                 @foreach($category->posts as $post)
                                     <div class="post-area">
+                                        <a href="{{ url($category->slug .'/'. $post->slug) }}"><div class="property-image">
+                                                <img src="{{ url('files/'. json_decode($post->images)[0])  }}" class="img-responsive" alt="#"  width="100%" style="height: 200px"/></div>
+                                        </a>
                                         <a href="{{ url($category->slug .'/'. $post->slug) }}"><h4>{{ $post->name }}</h4></a>
                                         <span class="best-place">{{ \Carbon\Carbon::parse($post->updated_at)->format('m-d-Y') }}</span>
                                     </div>
