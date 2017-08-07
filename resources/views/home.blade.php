@@ -46,7 +46,7 @@
 
                     <ul class="filter-list">
                         @foreach($posts as $post)
-                            <li class="mix {{ $post['category'] }} col-md-4 col-sm-6 animated out" data-delay="0" data-animation="fadeInUp" style="margin-top: 20px;">
+                            <li class="mix {{ $post['category'] }} col-md-4 col-sm-4 animated out" data-delay="0" data-animation="fadeInUp" style="margin-top: 20px;">
                                 <div class="property-box border-hover" style="margin-top: 15px;">
                                     <div class="property-image" style="height: 230px;">
                                         <img src="{{ url('files/'. json_decode($post['post']->images)[0])  }}" class="img-responsive" alt="#" width="100%" style="height: 250px;"/>
