@@ -33,7 +33,7 @@
                     </div>
                     <div class="blog-text">
                         {{--<span>{{ $post->updated_at }}</span>--}}
-                        <h4>{{ $post->name }}</h4>
+                        <a href="{{ url($category->slug .'/'. $post->slug) }}" class=""><h4>{{ $post->name }}</h4></a>
                         <p>{!! $post->desc !!}</p>
                         <a href="{{ url($category->slug .'/'. $post->slug) }}" class=""><i class="fa fa-angle-right"></i> Chi tiết</a>
                     </div>
