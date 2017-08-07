@@ -34,7 +34,8 @@ class HomeController extends Controller
     }
     public function postDetail($category, $post) {
         $post = Post::where('slug', $post)->first();
-        return view('frontend.post_detail', compact('post'));
+        $category = Category::where('slug', $category)->first();
+        return view('frontend.post_detail', compact('post', 'category'));
     }
     public function getPostHome($representativeCategories) {
         $posts = [];
