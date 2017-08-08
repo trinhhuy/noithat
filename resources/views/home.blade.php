@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <div id="mainslider">
+    <div class="container">
         <div class="slider">
             <div class="fullscreen-container">
                 <div class="fullscreenbanner">
@@ -22,8 +22,6 @@
                             </div>
                         </li>
                         @endforeach
-
-
                     </ul>
                 </div>
             </div>

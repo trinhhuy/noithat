@@ -44,7 +44,7 @@ class HomeController extends Controller
     public function getPostHome($representativeCategories) {
         $posts = [];
         foreach ($representativeCategories as $category) {
-            foreach ($category->posts as $post) {
+            foreach ($category->posts->take(6) as $post) {
                 $posts[] = [
                     'category' => $category->slug,
                     'post' => $post
