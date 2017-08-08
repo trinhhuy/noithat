@@ -27,7 +27,11 @@ class HomeController extends Controller
         $posts = $category->posts;
         if (count($posts) > 1) {
             $posts = $category->posts()->paginate(2);
-            return view('frontend.posts', compact('posts', 'category'));
+            $cost = '';
+            if (strpos(url()->current(), 'bao-gia') == false ) {
+                $cost = Category::where('slug', 'bao-gia')->first();
+            }
+            return view('frontend.posts', compact('posts', 'category', 'cost'));
         } else {
             return view('frontend.post', compact('posts', 'category'));
         }
