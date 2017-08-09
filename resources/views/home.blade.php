@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-    <div class="container">
+    <div id="mainslider">
         <div class="slider">
             <div class="fullscreen-container">
                 <div class="fullscreenbanner">

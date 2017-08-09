@@ -24,7 +24,7 @@
                         @foreach(json_decode($post->images) as $key => $image)
                             @if($key == 0)
                                 <a href="{{ url('files/'. $image)  }}"><div class="property-image">
-                                        <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 200px"/></div>
+                                        <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 600px"/></div>
                                 </a>
                             @else
                                 <a href="{{ url('files/'. $image)  }}" width="100%"></a>
@@ -32,7 +32,8 @@
                         @endforeach
                     </div>
                     <div class="blog-text">
-                        <a href="{{ url($category->slug .'/'. $post->slug) }}" class=""><h4>{{ $post->name }}</h4></a>
+                        <a href="{{ url($category->slug .'/'. $post->slug) }}" class=""><strong><h4>{{ $post->name }}</h4></strong></a>
+                        <p>{!! $post->desc !!}</p>
                     </div>
                 </div>
                 @endforeach

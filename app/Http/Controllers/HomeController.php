@@ -26,7 +26,7 @@ class HomeController extends Controller
         $category = Category::where('slug', $slug)->first();
         $posts = $category->posts;
         if (count($posts) > 1) {
-            $posts = $category->posts()->paginate(2);
+            $posts = $category->posts()->paginate(10);
             $cost = '';
             if (strpos(url()->current(), 'bao-gia') == false ) {
                 $cost = Category::where('slug', 'bao-gia')->first();
