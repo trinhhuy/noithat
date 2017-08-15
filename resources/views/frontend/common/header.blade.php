@@ -1,4 +1,15 @@
 <header>
+    <style scope>
+        @media (max-width: 500px){
+            .navigation{
+                margin: 24px 0;
+            }
+            .logo img{
+               height: 40px;
+                width: auto;
+            }
+        }
+    </style>
     <div class="container">
         <div class="navigation clearfix">
             <div class="logo"><a href="{{ url('/') }}"><img src="{{ url('files/'. \App\Components\Functions::getLogo()->image) }}" alt="#" /> </a></div>

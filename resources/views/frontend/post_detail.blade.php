@@ -3,7 +3,7 @@
     <section class="border-top">
         <div class="container">
             <div class="page-title mrgb3x mrgt6x clearfix">
-                <h4 class="page-name">{{ $post->name }}</h4>
+                <h4 class="page-name" style="font-family: 'Times New Roman', serif !important;font-weight: 600;">{{ $post->name }}</h4>
             </div>
         </div>
     </section>
@@ -42,7 +42,7 @@
                                         <a href="{{ url($category->slug .'/'. $post->slug) }}"><div class="property-image">
                                                 <img src="{{ url('files/'. json_decode($post->images)[0])  }}" class="img-responsive" alt="#"  width="100%" style="height: 200px"/></div>
                                         </a>
-                                        <a href="{{ url($category->slug .'/'. $post->slug) }}"><h4>{{ $post->name }}</h4></a>
+                                        <a href="{{ url($category->slug .'/'. $post->slug) }}"><h4 style="font-family: 'Times New Roman', serif !important;text-align: center">{{ $post->name }}</h4></a>
                                         <span class="best-place">{{ \Carbon\Carbon::parse($post->updated_at)->format('m-d-Y') }}</span>
                                     </div>
                                 @endforeach

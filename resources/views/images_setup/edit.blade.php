@@ -46,7 +46,7 @@
         <div class="col-xs-12">
             @include('common.errors')
 
-            <form class="form-horizontal" role="form" method="POST" action="{{ route('images-setup.update', $image->id) }}">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('images-setup.update', $image->id) }}" enctype="multipart/form-data">
                 {!! method_field('PUT') !!}
                 @include('images_setup._form')
             </form>

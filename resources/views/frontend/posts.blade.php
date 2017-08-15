@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 @section('content')
-
+    <?php $agent = new \Jenssegers\Agent\Agent(); ?>
     <section class="vacation-bg animated out" data-delay="0" data-animation="fadeInUp" style="background:url({{ url('files/'. $category->banner) }});">
         <div class="container">
             <div class="get-start mrgt6x mrgb6x clearfix">
@@ -23,9 +23,16 @@
                     <div class="blogsingle-img">
                         @foreach(json_decode($post->images) as $key => $image)
                             @if($key == 0)
-                                <a href="{{ url('files/'. $image)  }}"><div class="property-image">
-                                        <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 600px"/></div>
-                                </a>
+                                @if ($agent->isMobile())
+                                    <a href="{{ url('files/'. $image)  }}"><div class="property-image">
+                                            <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 200px"/></div>
+                                    </a>
+                                @else
+                                    <a href="{{ url('files/'. $image)  }}"><div class="property-image">
+                                            <img src="{{ url('files/'. $image)  }}" class="img-responsive" alt="#"  width="100%" style="height: 600px"/></div>
+                                    </a>
+                                @endif
+
                             @else
                                 <a href="{{ url('files/'. $image)  }}" width="100%"></a>
                             @endif
@@ -46,6 +53,7 @@
             <div class="col-md-3">
                 <div class="right-side-bar">
                     <div class="blog-post mrgt6x animated out" data-delay="0" data-animation="fadeInUp">
+                        @if (isset($cost->posts)))
                         @foreach($cost->posts as $post)
                             <div class="post-area">
                                 <a href="{{ url($category->slug .'/'. $post->slug) }}"><div class="property-image">
@@ -55,6 +63,7 @@
                                 <span class="best-place">{{ \Carbon\Carbon::parse($post->updated_at)->format('m-d-Y') }}</span>
                             </div>
                         @endforeach
+                        @endif
                     </div>
                 </div>
             </div>

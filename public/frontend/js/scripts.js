@@ -6,118 +6,118 @@ jQuery(document).ready(function($) {
 
 		
 	if ( $('.fullscreenbanner').length){
-			
-			
-		var api =	
-		
+
+
+		var api =
+
 		$('.fullscreenbanner').revolution(
 		{
-					//delay:9000,
+			         delay:9000,
 					 //startwidth:1170,
-					 startheight:710,
+					 startheight:500,
 					 startWithSlide:0,
-			 
-					 fullScreenAlignForce:"off",
-					 autoHeight:"off",
-					 minHeight:"off",
-			 
-					 shuffle:"off",
-			 
-					 onHoverStop:"on",
-			 
-					 thumbWidth:100,
-					 thumbHeight:50,
-					 thumbAmount:3,
-			 
-					 hideThumbsOnMobile:"off",
-					 hideNavDelayOnMobile:1500,
-					 hideBulletsOnMobile:"off",
-					 hideArrowsOnMobile:"off",
-					 hideThumbsUnderResoluition:0,
-			 
-					 hideThumbs:0,
-					 hideTimerBar:"off",
-			 
-					 keyboardNavigation:"on",
-			 
-					 navigationType:"bullet",
-					 navigationArrows:"solo",
-					 navigationStyle:"round",
-			 
-					 navigationHAlign:"center",
-					 navigationVAlign:"bottom",
-					 navigationHOffset:30,
-					 navigationVOffset:30,
-			 
-					 soloArrowLeftHalign:"left",
-					 soloArrowLeftValign:"center",
-					 soloArrowLeftHOffset:20,
-					 soloArrowLeftVOffset:0,
-			 
-					 soloArrowRightHalign:"right",
-					 soloArrowRightValign:"center",
-					 soloArrowRightHOffset:20,
-					 soloArrowRightVOffset:0,
-			 
-			 
-					 touchenabled:"on",
-					 swipe_velocity:"0.7",
-					 swipe_max_touches:"1",
-					 swipe_min_touches:"1",
-					 drag_block_vertical:"false",
-			 
-					 parallax:"mouse",
-					 parallaxBgFreeze:"on",
-					 parallaxLevels:[10,7,4,3,2,5,4,3,2,1],
-					 parallaxDisableOnMobile:"off",
-			 
-					 stopAtSlide:-1,
-					 stopAfterLoops:-1,
-					 hideCaptionAtLimit:0,
-					 hideAllCaptionAtLilmit:0,
-					 hideSliderAtLimit:0,
-			 
-					 dottedOverlay:"none",
-			 
-					 spinned:"spinner4",
-			 
-					 fullWidth:"off",
-					 forceFullWidth:"off",
-					 fullScreen:"0ff",
-					 fullScreenOffsetContainer:"#topheader-to-offset",
-					 fullScreenOffset:"0px",
-			 
-					 panZoomDisableOnMobile:"off",
-			 
-					 simplifyAll:"off",
-			 
-					 shadow:0
-			
+
+					 // fullScreenAlignForce:"off",
+					 // autoHeight:"off",
+					 // minHeight:"off",
+                     //
+					 // shuffle:"off",
+                     //
+					 // onHoverStop:"on",
+                     //
+					 // thumbWidth:100,
+					 // thumbHeight:50,
+					 // thumbAmount:3,
+                     //
+					 // hideThumbsOnMobile:"off",
+					 // hideNavDelayOnMobile:1500,
+					 // hideBulletsOnMobile:"off",
+					 // hideArrowsOnMobile:"off",
+					 // hideThumbsUnderResoluition:0,
+                     //
+					 // hideThumbs:0,
+					 // hideTimerBar:"off",
+                     //
+					 // keyboardNavigation:"on",
+                     //
+					 // navigationType:"bullet",
+					 // navigationArrows:"solo",
+					 // navigationStyle:"round",
+                     //
+					 // navigationHAlign:"center",
+					 // navigationVAlign:"bottom",
+					 // navigationHOffset:30,
+					 // navigationVOffset:30,
+                     //
+					 // // soloArrowLeftHalign:"left",
+					 // // soloArrowLeftValign:"center",
+					 // // soloArrowLeftHOffset:20,
+					 // // soloArrowLeftVOffset:0,
+                     // //
+					 // // soloArrowRightHalign:"right",
+					 // // soloArrowRightValign:"center",
+					 // // soloArrowRightHOffset:20,
+					 // // soloArrowRightVOffset:0,
+                     //
+                     //
+					 // touchenabled:"on",
+					 // swipe_velocity:"0.7",
+					 // swipe_max_touches:"1",
+					 // swipe_min_touches:"1",
+					 // drag_block_vertical:"false",
+                     //
+					 // parallax:"mouse",
+					 // parallaxBgFreeze:"on",
+					 // parallaxLevels:[10,7,4,3,2,5,4,3,2,1],
+					 // parallaxDisableOnMobile:"off",
+                     //
+					 // stopAtSlide:-1,
+					 // stopAfterLoops:-1,
+					 // hideCaptionAtLimit:0,
+					 // hideAllCaptionAtLilmit:0,
+					 // hideSliderAtLimit:0,
+                     //
+					 // dottedOverlay:"none",
+                     //
+					 // spinned:"spinner4",
+                     //
+					 // fullWidth:"off",
+					 // forceFullWidth:"off",
+					 // fullScreen:"0ff",
+					 // fullScreenOffsetContainer:"#topheader-to-offset",
+					 // fullScreenOffset:"0px",
+                     //
+					 // panZoomDisableOnMobile:"off",
+                     //
+					 // simplifyAll:"off",
+                     //
+					 // shadow:0
+
 				});
-			
+
 			api.revpause();
 	}
-	
+
 	//revolution-slider 2
-	
+
 	if ( $('.fullscreenbanner-banner-2').length)
-	{		
-			
-		var api =	
-		
+	{
+
+		var api =
+
 		$('.fullscreenbanner-banner-2').revolution(
 		{
-			//delay:9000,
+			  delay:9000,
 			 //startwidth:1170,
-			 startheight:364,
+			 startheight:270,
 			 startWithSlide:0,
-			 navigationType: 'none',			
-	
+			 navigationType: 'none',
+
 		});
-			
+
 		api.revpause();
 	}
-	
+
 	//price slider
 	
 	$(function() {
@@ -135,8 +135,8 @@ jQuery(document).ready(function($) {
 			$( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
 			" - " + $( "#slider-range" ).slider( "values", 1 ) + "$" );
 		}
-		
-	
+
+
 		if( $('#slider-range2').length ) {
 			$( "#slider-range2" ).slider({
 				range: true,
@@ -150,8 +150,8 @@ jQuery(document).ready(function($) {
 			$( "#amount2" ).val( "" + $( "#slider-range2" ).slider( "values", 0 ) +
 			" - " + $( "#slider-range2" ).slider( "values", 1 ) + "$" );
 		}
-	
-	
+
+
 		if( $('#slider-range3').length ) {
 			$( "#slider-range3" ).slider({
 				range: true,
@@ -162,12 +162,12 @@ jQuery(document).ready(function($) {
 					$( "#amount3" ).val( "" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] + "$" );
 				}
 			});
-			
+
 			$( "#amount3" ).val( "" + $( "#slider-range3" ).slider( "values", 0 ) +
 			" - " + $( "#slider-range3" ).slider( "values", 1 ) + "$" );
 		}
-		
-		
+
+
 		if( $('#slider-range4').length ) {
 			$( "#slider-range4" ).slider({
 				range: true,
@@ -178,11 +178,11 @@ jQuery(document).ready(function($) {
 					$( "#size" ).val( ui.values[ 0 ] + " -" + ui.values[ 1 ] + "Sq Ft" );
 				}
 			});
-			
+
 			$( "#size" ).val( $( "#slider-range4" ).slider( "values", 0 ) +
 			" - " + $( "#slider-range4" ).slider( "values", 1 ) + "Sq Ft " );
 		}
-	
+
 	
 	});	
 	
